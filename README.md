@@ -1,8 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a simple repo exploring [Vercel AI SDK](https://github.com/vercel-labs/ai). It's meant to share the code from my [YouTube Channel](https://youtu.be/VsyIya5PWb0):
+
+This is by all means not production ready software. This is just to help get you started quickly.
 
 ## Getting Started
 
-First, run the development server:
+1. Make sure you register for an OpenAI API key. ([See how to here](https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/))
+2. Copy `.env.example` to a new file called `.env` or `.env.local` **`.env` is tracked in git, be careful about handling your API key properly**
+3. install dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+4. run the development server:
 
 ```bash
 npm run dev
@@ -14,21 +28,7 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Relevant files
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [chat/route.ts](./app/api/chat/route.ts) handles the requests being sent to Open AI. They stream the responses back to the UI.
+- [page/tsx](./app/page.tsx) handles the form, hooks and communicates with the api route.
